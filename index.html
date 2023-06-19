@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Vue 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="vueapp">
+        <h1>{{ mensaje }}</h1>
+        <button @click="handleClick">Cambia texto</button>
+    </div>
+    <script>
+        // Aquí podemos utilizar vue
+        const { createApp } = Vue
+
+        createApp({
+            setup() {
+                const mensaje = "Hola desde Vue3"
+                const handleClick = () => {
+                    console.log("He hecho click")
+                }
+                return {
+                    mensaje,
+                    handleClick
+                }
+            }
+        }).mount("div#vueapp")
+    </script>
+</body>
+</html>
