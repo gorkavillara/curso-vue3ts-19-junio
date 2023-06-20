@@ -2,7 +2,7 @@
     <div :class="
         `tarea ${hecho ? 'completada' : ''}`
     ">
-        <p class="titulo">Este es el título de la tarea</p>
+        <p class="titulo">{{ titulo }}</p>
         <div class="acciones">
             <span class="fecha">Fecha</span>
             <button class="toggle" @click="cambiaEstado">
@@ -14,6 +14,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue"
+
+const { titulo } = defineProps<{ titulo: string }>()
+console.log(titulo)
+
 const hecho = ref(false)
 
 const cambiaEstado = () => {
