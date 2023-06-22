@@ -7,9 +7,12 @@
 defineProps<{
   valor: string;
 }>();
-const emit = defineEmits(["cambiaValor"])
+// const emit = defineEmits(["miEvento"])
+const emit = defineEmits<{
+    (e: "miEvento", evento: InputEvent): void
+}>()
 
 const cambiaValor = (evento: Event) => {
-    emit("cambiaValor", evento)
+    emit("miEvento", evento as InputEvent)
 }
 </script>
