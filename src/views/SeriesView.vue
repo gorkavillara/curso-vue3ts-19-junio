@@ -2,7 +2,10 @@
   <h1>Series</h1>
   <div
     v-for="(serie, index) in series"
-    :class="`serie ${index % 2 ? 'odd' : 'even'}`"
+    :class="`serie 
+        ${index % 2 ? 'odd' : 'even'} 
+        ${serie.vista ? 'vista' : ''}
+    `"
     @click="cambiaEstado(index)"
   >
     <span style="text-align: left; flex-grow: 1">{{ serie.titulo }}</span>
@@ -54,6 +57,8 @@ const cambiaEstado = (index: number) => {
         if (id !== index) return serie
         return { ...serie, vista: serie.vista ? false : true }
     })
+
+    // series.value[index].vista = !series.value[index].vista
 }
 </script>
 
@@ -71,5 +76,10 @@ const cambiaEstado = (index: number) => {
 }
 .serie.even {
   background-color: rgba(150, 150, 150, 0.3);
+}
+
+.vista {
+  text-decoration-line: line-through;
+  font-style: italic;
 }
 </style>
