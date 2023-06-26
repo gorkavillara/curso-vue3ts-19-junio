@@ -1,12 +1,9 @@
 <template>
-    <div v-if="esVisible">Esto debería verse</div>
-    <DirectivasParametros />
+    <MiLoader />
 </template>
 
 <script setup lang="ts">
-import DirectivasPersonalizadas from "./components/DirectivasPersonalizadas.vue"
-import DirectivasParametros from "./components/DirectivasParametros.vue"
-const esVisible = true
+import MiLoader from "./components/MiLoader.vue"
 </script>
 
 <style scoped>
