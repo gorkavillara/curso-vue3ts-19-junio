@@ -1,9 +1,12 @@
 <template>
-    <ReglasGlobales />
+    <div v-if="esVisible">Esto debería verse</div>
+    <DirectivasParametros />
 </template>
 
 <script setup lang="ts">
-import ReglasGlobales from './components/ReglasGlobales.vue';
+import DirectivasPersonalizadas from "./components/DirectivasPersonalizadas.vue"
+import DirectivasParametros from "./components/DirectivasParametros.vue"
+const esVisible = true
 </script>
 
 <style scoped>

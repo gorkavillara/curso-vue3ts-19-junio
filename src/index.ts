@@ -1,12 +1,6 @@
 import { createApp } from "vue"
-import { defineRule } from "vee-validate"
 import Main from "./Main.vue"
 import "./style.css"
-
-defineRule("empiezaPorA", (value: string) => {
-  if (value.charAt(0) === "a") return true
-  return "El campo username debe empezar por a"
-})
 
 const app = createApp(Main)
 // const app2 = createApp(Dashboard)
