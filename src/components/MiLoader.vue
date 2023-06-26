@@ -7,6 +7,7 @@
     <br />
     <button @click="stopLoading">Stop</button>
     <button @click="setLoading">Start</button>
+    <input v-focus type="text" />
 </template>
 
 <script setup lang="ts">
