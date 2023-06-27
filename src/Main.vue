@@ -1,10 +1,11 @@
 <template>
+  <div>
     <MiLoader />
+  </div>
 </template>
 
 <script setup lang="ts">
-import MiLoader from "./components/MiLoader.vue"
+import MiLoader from "./components/MiLoader.vue";
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

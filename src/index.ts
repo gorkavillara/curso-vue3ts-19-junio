@@ -13,6 +13,12 @@ const router = createRouter({
     routes,
     history: createWebHistory()
 })
+
+router.beforeEach((to, from, next) => {
+    console.log(`Estás viajando a la ruta ${to.path}`)
+    console.log(to.meta)
+    next()
+})
 app.use(router)
 
 app.use(MiPlugin)

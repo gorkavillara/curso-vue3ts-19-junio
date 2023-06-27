@@ -1,22 +1,24 @@
 <template>
+  <div>
     <h2>Mi loader</h2>
     <span v-if="loader.loading">
-        <span class="loader" :style="`border-left-color:${loader.color}`"></span>
+      <span class="loader" :style="`border-left-color:${loader.color}`"></span>
     </span>
     <br />
     <br />
     <button @click="stopLoading">Stop</button>
     <button @click="setLoading">Start</button>
     <input v-focus type="text" />
+  </div>
 </template>
 
 <script setup lang="ts">
-import useLoader from "../composables/useLoader"
+import useLoader from "../composables/useLoader";
 
 const { loader, setLoading, stopLoading } = useLoader({
-    initiallyLoading: true,
-    color: "blue"
-})
+  initiallyLoading: true,
+  color: "blue",
+});
 </script>
 
 <style scoped>
@@ -25,13 +27,13 @@ const { loader, setLoading, stopLoading } = useLoader({
   height: 48px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 4px solid #FFF;
+  border-top: 4px solid #fff;
   border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
 .loader::after {
-  content: '';  
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -39,7 +41,7 @@ const { loader, setLoading, stopLoading } = useLoader({
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border-left: 4px solid #FF3D00;
+  border-left: 4px solid #ff3d00;
   border-bottom: 4px solid transparent;
   animation: rotation 0.5s linear infinite reverse;
 }
@@ -50,5 +52,5 @@ const { loader, setLoading, stopLoading } = useLoader({
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 </style>
