@@ -1,10 +1,9 @@
 import { createApp } from "vue"
 import App from "./App.vue"
+import "./index.css"
 import MiPlugin from "./plugins/miPlugin"
 import { createRouter, createWebHistory } from "vue-router"
 import routes from "./routes"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.min.js"
 
 const app = createApp(App)
 
