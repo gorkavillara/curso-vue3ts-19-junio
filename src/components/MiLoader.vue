@@ -16,7 +16,7 @@
 import useLoader from "../composables/useLoader";
 
 const { loader, setLoading, stopLoading } = useLoader({
-  initiallyLoading: true,
+  initiallyLoading: false,
   color: "blue",
 });
 </script>

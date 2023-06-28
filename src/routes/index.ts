@@ -5,6 +5,8 @@ import Main from "../Main.vue"
 // import DetallesUsuario from "../components/DetallesUsuario.vue"
 import ArticuloLargo from "../components/ArticuloLargo.vue"
 import ComponenteProhibido from "../components/ComponenteProhibido.vue"
+import LoginView from "../components/LoginView.vue"
+import ClientesView from "../components/ClientesView.vue"
 
 const estaLogueado = () => Math.random() > 0.5
 
@@ -57,6 +59,14 @@ const routes: RouteRecordRaw[] = [
         // beforeLeave() {
 
         // }
+    },
+    {
+        path: "/login",
+        component: LoginView
+    },
+    {
+        path: "/clientes",
+        component: ClientesView
     }
 ]
 
