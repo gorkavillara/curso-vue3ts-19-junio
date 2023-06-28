@@ -1,33 +1,19 @@
 <template>
-  <div class="navbar">
-    <router-link :to="{ path: '/' }">Home</router-link>
-    <router-link :to="{ path: '/clientes' }" v-if="isLoggedIn">Clientes</router-link>
-    <button v-if="isLoggedIn" @click="logOut">Logout</button>
-    <router-link :to="{ path: '/login' }" v-if="!isLoggedIn">Login</router-link>
+  <NavBar />
+  <div class="principal">
+    <h1>Hola mundo</h1>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <GridExample />
   </div>
-  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
-import { ref, provide } from "vue"
-
-const isLoggedIn = ref(false)
-const logIn = () => {
-  isLoggedIn.value = true
-}
-const logOut = () => {
-  sessionStorage.removeItem("sessionToken")
-  isLoggedIn.value = false
-}
-
-provide("isLoggedIn", isLoggedIn)
-provide("logIn", logIn)
+import NavBar from "./components/NavBar.vue"
+import GridExample from "./components/GridExample.vue"
 </script>
 
 <style scoped>
-  .navbar {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  .principal {
+    padding: 1rem;
   }
 </style>

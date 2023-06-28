@@ -1,24 +1,17 @@
 import { createApp } from "vue"
 import App from "./App.vue"
-import "./style.css"
 import MiPlugin from "./plugins/miPlugin"
 import { createRouter, createWebHistory } from "vue-router"
 import routes from "./routes"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.min.js"
 
 const app = createApp(App)
-// const app2 = createApp(Dashboard)
-// app2.mount("div#app2")
 
 const router = createRouter({
     routes,
     history: createWebHistory()
 })
-
-// router.beforeEach((to, from, next) => {
-//     console.log(`Estás viajando a la ruta ${to.path}`)
-//     console.log(to.meta)
-//     next()
-// })
 app.use(router)
 
 app.use(MiPlugin)
